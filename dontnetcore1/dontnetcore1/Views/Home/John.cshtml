@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "John";
+}
+<h2>@ViewData["Title"].</h2>
+<h3>@ViewData["Message"]</h3>
+
+<style type="text/css">  
+    div.progress{
+        background-color:blue;
+        height:50px;
+    }
+</style>
+
+<p id="myp">@ViewData["Someotherthing"]</p>
+
+<input id="myinput" type="text" style="width:100%;" /><br/>
+<input onclick="buttonClick()" type="button" value="get data" />
+
+<br />
+<br />
+<input onclick="generateRandomNumber()" type="button" value="generate random" />
+<input id="hid" type="hidden" value="&exclude[0]=-1" />
+<input id="count" type="hidden" value="1" />
+<p id="rand"></p>
+<br />
+<br />
+<input id="cN" type="text" value= "" />
+<input onclick="enableAPI()" type="button" value="Get Weather" />
+<p id= "wStatus"></p>
+<div id="prog" class="progress"></div>
+    @section Scripts {
+        <script type="text/javascript">
+            $(function () {
+
+            })
+
+            function buttonClick() {
+                $.get('Mau?name=' + $('#myinput').val(), function (data, status) {     // a / signifies to use id, otherwise you must specify
+                    $('#myp').html(data);
+                });
+            }
+
+            function generateRandomNumber() { //API and a database and a front end to an API because it throws numbers to the exclude array
+                var hidden = $('#hid');
+                var p = $('#rand');
+                $.get('random?min=1&max=25' + hidden.val(), function (data, status) {
+                    var c = parseInt($('#count').val());
+                    p.html(p.html() + "<br/>" + c + ") New random number is: " + data + "\n"); //we use hidden val to pseudo store data
+                    hidden.val(hidden.val() + "&exclude[" + $('#count').val() + "]=" + data);
+                    $('#count').val(c + 1);
+                });
+            }
+
+            function enableAPI() {  //Here we use open weather map's API to 
+                var cityName = $("#cN");
+                $.get('http://api.openweathermap.org/data/2.5/weather?apikey=23df0224558abe0ec9c3947671584424&q=' + cityName.val(), function (data, status) {
+                    var p = $("#wStatus");  // No reason to output in javascript when we can manipulate the HTML to display results as needed
+                    p.html("Current weather status: " + data.weather[0].main + "</br>" + "Current temperature: " + (((data.main.temp - 273) * 1.8) + 32) + "\n");
+                    $('#prog').attr("style", "width:" + ((data.main.temp) / .4) + "px;"); //The loading bar logic un normalized.
+
+                })
+
+            }
+        </script>
+    }

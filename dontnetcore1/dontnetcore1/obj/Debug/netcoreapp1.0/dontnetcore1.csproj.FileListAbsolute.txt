@@ -1,0 +1,9 @@
+c:\users\mauhib\documents\visual studio 2017\Projects\dontnetcore1\dontnetcore1\bin\Debug\netcoreapp1.0\dontnetcore1.deps.json
+c:\users\mauhib\documents\visual studio 2017\Projects\dontnetcore1\dontnetcore1\bin\Debug\netcoreapp1.0\dontnetcore1.runtimeconfig.json
+c:\users\mauhib\documents\visual studio 2017\Projects\dontnetcore1\dontnetcore1\bin\Debug\netcoreapp1.0\dontnetcore1.runtimeconfig.dev.json
+c:\users\mauhib\documents\visual studio 2017\Projects\dontnetcore1\dontnetcore1\bin\Debug\netcoreapp1.0\dontnetcore1.dll
+c:\users\mauhib\documents\visual studio 2017\Projects\dontnetcore1\dontnetcore1\bin\Debug\netcoreapp1.0\dontnetcore1.pdb
+c:\users\mauhib\documents\visual studio 2017\Projects\dontnetcore1\dontnetcore1\obj\Debug\netcoreapp1.0\dontnetcore1.csprojResolveAssemblyReference.cache
+c:\users\mauhib\documents\visual studio 2017\Projects\dontnetcore1\dontnetcore1\obj\Debug\netcoreapp1.0\dontnetcore1.AssemblyInfo.cs
+c:\users\mauhib\documents\visual studio 2017\Projects\dontnetcore1\dontnetcore1\obj\Debug\netcoreapp1.0\dontnetcore1.dll
+c:\users\mauhib\documents\visual studio 2017\Projects\dontnetcore1\dontnetcore1\obj\Debug\netcoreapp1.0\dontnetcore1.pdb
